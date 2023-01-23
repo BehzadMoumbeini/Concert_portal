@@ -1,0 +1,34 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+  edit profile
+{% endblock %}
+
+{% block maincontent %}
+  <form action="" method="post" ENCTYPE="multipart/form-data">
+    {% csrf_token %}
+    <div class="mainborder">
+      <div class="row">
+        <div class="col-md-10">
+          <p class="border"> <span class="title"> Name: </span> </p>
+          <p class="border"> <span class="title"> Family: </span> </p>
+          <p class="border"> <span class="title"> Email: </span> </p>
+          <p class="border"> <span class="title"> Gender: </span> {{ profileEdit.Gender }} </p>
+          <p class="border"> <span class="title"> Credit: </span> {{ profileEdit.Credit }}</p>
+
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="imageBox">
+          <img src="{{ ProfileImage }}">
+        </div>
+        {{ profileEditForm.ProfileImage }}
+      </div>
+    </div>
+    <div class="bottonborder">
+      <button type="submit" class="btn btn-success"> SAVE </button>
+    </div>
+
+
+  </form>
+{% endblock %}

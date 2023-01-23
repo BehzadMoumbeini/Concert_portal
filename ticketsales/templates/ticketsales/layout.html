@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ticket sale system</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'ticketsales/css/fontawesome.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'ticketsales/css/bootstrap.css' %} ">
+        <link rel="stylesheet" type="text/css" href="{% static 'ticketsales/css/style.css' %} ">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row box">
+
+                <h1> {% block titlepage %}{% endblock %}</h1>
+                <ul class="btnul">
+
+                    {% if user.is_authenticated  %}
+                        <li><a class="btn btn-danger" href="/accounts/logout">EXIT</a></li>
+
+                    {% else %}
+                        <li><a class="btn btn-success" href="/accounts/login">ENTER</a></li>
+                        <li><a class="btn btn-danger" href="/accounts/profileRegister">SUBSCRIBE</a></li>
+                    {% endif %}
+
+
+
+                    <li><a class="btn btn-primary" href="/ticketsales/time/list">CONCERT SESSIONS</a></li>
+                    <li><a class="btn btn-default" href="/ticketsales/concert/list">MAIN PAGE</a></li>
+                    <li><a class="btn btn-danger" href="/ticketsales/location/list">LOCATION INFORMATION</a></li>
+
+                </ul>
+            </div>
+
+            <div class="row">
+                  {% block main_content %}{% endblock %}
+
+            </div>
+        </div>
+
+    </body>
+    <script src="{% static 'ticketsales/js/jquery-3.6.3.min.js' %} " ></script>
+    <script src="{% static 'ticketsales/js/bootstrap.bundle.js' %} " ></script>
+    <script src="{% static 'ticketsales/js/fontawesome.js' %} " ></script>
+    <script src="{% static 'ticketsales/js/main.js' %} " ></script>
+</html>

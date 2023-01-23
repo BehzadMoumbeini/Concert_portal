@@ -1,0 +1,44 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+session list
+{% endblock %}
+
+
+{% block main_content %}
+    {% if timelist %}
+        {% for time in timelist %}
+            <div class="col-md-2">
+                <a>
+                    <div class="timeBox">
+                        <h2> {{ time.Concertmodel.Name }} </h2>
+                        <p>{{ time.Concertmodel.SingerName }}</p>
+                        <p>{{ time.Locationmodel.Name }}</p>
+                        <p>{{ time.get_jalali_date }}</p>
+                        <div
+
+                             class="
+
+                             {% if time.Status == time.Start %}
+                                 btn btn-success
+
+                             {% elif time.Status == time.End %}
+                                btn btn-dnger
+
+                             {% elif time.Status == time.Cancel %}
+                                btn default
+
+                             {% elif time.Status == time.Sale %}
+                                btn btn-primary
+
+                             {% endif %}
+                             ">
+                            {{ time.get_Status_display }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+

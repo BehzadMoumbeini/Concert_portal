@@ -1,0 +1,35 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+  subscribe form
+{% endblock %}
+
+
+{% block maincontent %}
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mainborder">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mylabel">Name: {{ formData.first_name }}</p>
+          <p class="mylabel">Family: {{ formData.last_name }}</p>
+          <p class="mylabel">Gender: {{ formData.Gender }}</p>
+          <p class="mylabel">Credit: {{ formData.Credit }}</p>
+        </div>
+
+        <div class="col-md-6">
+          <p class="mylabel">Email: {{ formData.email }}</p>
+          <p class="mylabel">UserName: {{ formData.username }}</p>
+          <p class="mylabel">Password: {{ formData.password }}</p>
+          {{ formData.profileImage }}
+        </div>
+      </div>
+    </div>
+    <div class="bottonborder">
+      <button type="submit" class="btn btn-success" >SUBSCRIBE</button>
+    </div>
+
+  </form>
+
+{% endblock %}

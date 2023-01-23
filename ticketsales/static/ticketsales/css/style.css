@@ -1,0 +1,30 @@
+p{
+    color: red;
+    font-size:20px;
+}
+
+.locationHeader{
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 15px;
+    border: 1px dashed green;
+    padding: 10px;
+    text-align: right;
+    color: green;
+}
+
+
+
+.timeBox{
+    margin: 5px;
+    background-color: whitesmoke;
+    font-size: 15px;
+    border: 1px dashed green;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.defauls{
+    border: 1px solid grey;
+}

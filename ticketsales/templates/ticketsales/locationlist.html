@@ -1,0 +1,31 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+list of locations
+{% endblock %}
+
+
+{% block main_content %}
+
+    <div class="row locationHeader">
+        <div class="col-md-3">
+            <h3>location room name</h3>
+        </div>
+        <div class="col-md-9">
+        <h3>address</h3>
+        </div>
+    </div>
+
+    {% if locationlist %}
+        {% for location in locationlist %}
+            <div class="row-location">
+                <div class="col-md-3">
+                    {{ location.Name }}
+                </div>
+                <div class="col-md-9">
+                    {{ location.Address }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

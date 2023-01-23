@@ -1,0 +1,30 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+user enterance
+{% endblock %}
+
+
+{% block main_content %}
+
+<div class="col-md-3"></div>
+
+<div class="col-md-6">
+
+<form action="" method="POST" class="form">
+    {% csrf_token %}
+    <h3> please enter your information</h3>
+    <p style="color: red;">{{ username }}: {{ errormessage }}</p>
+    <label class="lable-control"> username:</label>
+    <input type="text" id="username" placeholder="ENTER YOUR USERNAME" class="form-control">
+    <label class="lable-control"> password:</label>
+    <input type="text" id="password" placeholder="ENTER YOUR PASSWORD" class="form-control">
+
+    <input type="submit" value="ENTER", class="btn btn-success">
+
+</form>
+</div>
+
+<div class="col-md-3"></div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "ticketsales/layout.html" %}
+
+{% block titlepage %}
+  profile {{ concertdetails.Name }}
+{% endblock %}
+
+{% block maincontent %}
+  <div class="row" style="margin-top: 20px;">
+
+    <div class="col-md-9">
+      <div>
+        <p class="border"> <span class="title">Name and Family</span> {{profile.user.get_full_name}}</p>
+        <p class="border"> <span class="title">Gender</span> {{profile.get_Gender_display}}</p>
+        <p class="border"> <span class="title">Credit</span> {{profile.Credit}}</p>
+        <ul class="btnul">
+          <li><a class="btn btn-primary" href="/accounts/profileEdit">edit profile</a> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3" dir="ltr">
+      <img src="{{ profile.ProfileImage.url }}" style="width:100%;heith:auto">
+    </div>
+
+  </div>
+
+{% endblock %}
